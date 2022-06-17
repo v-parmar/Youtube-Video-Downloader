@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+body {
+    margin: 0;
+    background: #FFFFFF;
+    font-family: 'work Sans',sans-serif;
+    font-weight: 400;
+
+}
+
+
+
+
+
+.container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+header {
+    background: #55d6aa;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo {
+    float: left;
+    padding: 10px 0;
+}
+
+//for the list of links in right place
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    //this is margin get speac between the two word margin left mens speace between two word
+    // margin : 0 10px; in margin first 0 is for up down and second 10px is for the left and right speace
+    margin-left: 70px;
+    padding-top: 23px;
+
+    position: relative;
+}
+
+//links color and removing link under line and etc.
+nav a {
+    color: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+//hover effect  color
+nav a:hover {
+    color: #000;
+}
+
+//this is hower effect of the links
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: #444;
+
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+    
+    //this is transition of the hower effect  and that 
+    //250ms is 250 mili second thats time of hower effect
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+
+/* for the Input */
+input {
+	width: 40%;
+	float: center;
+	height: 40px;
+	margin: 200px 10px 100px 600px;
+	text-align: right;
+	text-indent: 5px;
+	font-size: 12.6pt;
+	border-radius: 15px;
+    padding: 20px;
+	border: solid 1.5px #615b5b;
+	-webkit-transition: 1s;
+	transition: 0.5s;
+
+    
+}
+input[type=text] {
+	&:hover {
+		box-shadow: 0 0 5pt 0.5pt #D3D3D3;
+	}
+	&:focus {
+		box-shadow: 0 0 5pt 2pt #D3D3D3;
+		outline-width: 0px;
+	}
+}
+
+  
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.buttons {
+    margin: -100px 10px 20px 50px;
+    text-align: center;
+}
+
+.btn-hover {
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+
+    border-radius: 50px;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:hover {
+    background-position: 100% 0;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.btn-hover:focus {
+    outline: none;
+}
+.btn-hover{
+    background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+
+ /* variables */
+$wave-bg : #FF00FF;
+
+
+/* mixins */
+@mixin flex($t, $j, $a) {
+    display : flex;
+    flex-flow : $t nowrap;
+    justify-content : $j;
+    align-items : $a;
+}
+
+/* styles */
+.container1 {
+   display : block;
+   margin : -270px 20px 0px 79px;
+}
+
+.parent {
+    width : 100%;
+    height : 100vh;
+    @include flex(row, center, center);
+  }
+  
+  .wave-card {
+      width : 250px;
+      height : 100px;
+      @include flex(column, end, center);
+      position : relative;
+      box-shadow: 11px 17px 48px #000;
+      border-radius : 10px;
+      overflow : hidden;
+      
+      &-shape {
+        position : absolute;
+        width : 400px;
+        height : 380px;
+        z-index : 1;
+        opacity : 0.6;
+        top : -250px;
+        left : -100px;
+        border-radius : 150px;
+        background: $wave-bg;
+        animation : rotate 30s linear infinite;
+      }
+      &-shape:nth-child(1) {
+        top : -245px;
+        left : -98px;
+        opacity : 0.4;
+        z-index : 2;
+        animation : rotate 25s linear infinite;
+      }
+      &-shape:nth-child(2) {
+        top : -240px;
+        opacity : 0.3;
+        z-index : 3;
+        animation : rotate 32s linear infinite;
+      }
+      &-title {
+        margin: 20px;
+      }
+       &-subtitle {
+        margin: 20px;
+      }
+  }
+  
+  
+
+
+.container2 {
+      display: block;
+      margin: -932px 20px 20px -500px;
+    
+  }
+.parent2 {
+    width: 100%;
+    height: 100vh;
+    @include flex(row, center, center);
+}
+
+.wave-card{
+    width: 250px;
+    height: 300px;
+    @include flex(column, end, center);
+    position: relative;
+    box-shadow: 11px 17px 48px #e5e5e5;
+    border-radius: 10px;
+    overflow: hidden;
+
+    &-shape2 {
+        position: absolute;
+        width: 400px;
+        height: 380px;
+        z-index: 1;
+        opacity: 0.6;
+        top: -250px;
+        left: -100px;
+        border-radius: 150px;
+        background: $wave-bg;
+        animation: rotate 30s linear infinite;
+        }
+        &-shape2:nth-child(1) {
+            top: -245px;
+            left: -98px;
+            opacity: 0.4;
+            z-index: 2;
+            animation: rotate 25s linear infinite;
+        }
+        &-shape2:nth-child(2) {
+            top: -240px;
+            opacity: 0.3;
+            z-index: 3;
+            animation: rotate 32s linear infinite;
+        }
+        &-title2 {
+            margin: 20px;
+        }
+        &-subtitle2 {
+            margin: 20px;
+        }
+}
+
+.container3 {
+    display: block;
+    margin: -955px 20px 20px 666px;
+  
+}
+.parent3 {
+  width: 100%;
+  height: 100vh;
+  @include flex(row, center, center);
+}
+
+.wave-card{
+  width: 250px;
+  height: 300px;
+  @include flex(column, end, center);
+  position: relative;
+  box-shadow: 11px 17px 48px #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+
+  &-shape3 {
+      position: absolute;
+      width: 400px;
+      height: 380px;
+      z-index: 1;
+      opacity: 0.6;
+      top: -250px;
+      left: -100px;
+      border-radius: 150px;
+      background: $wave-bg;
+      animation: rotate 30s linear infinite;
+      }
+      &-shape3:nth-child(1) {
+          top: -245px;
+          left: -98px;
+          opacity: 0.4;
+          z-index: 2;
+          animation: rotate 25s linear infinite;
+      }
+      &-shape3:nth-child(2) {
+          top: -240px;
+          opacity: 0.3;
+          z-index: 3;
+          animation: rotate 32s linear infinite;
+      }
+      &-title3 {
+          margin: 20px;
+      }
+      &-subtitle3 {
+          margin: 20px;
+      }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+    
+}
+
+    
+  
+
